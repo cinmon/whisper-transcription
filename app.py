@@ -19,8 +19,6 @@ if uploaded_file is not None and st.button("Transcribe"):
     st.markdown("""
     <style>
     .transcript-box {
-        background-color: #f9f9f9;
-        color: #000;
         padding: 1em;
         border-radius: 8px;
         height: 300px;
