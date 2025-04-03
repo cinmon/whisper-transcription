@@ -4,7 +4,7 @@ import os
 
 model = whisper.load_model("base")  # can be "small", "medium", "large"
 
-def transcribe_audio(file):
+def transcribe(file):
 
     # create temporary file
     # because whisper expects a file path
