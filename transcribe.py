@@ -4,7 +4,7 @@ import os
 
 model = whisper.load_model("base")  # can be "small", "medium", "large"
 
-def transcribe(file):
+def transcribe(file, language):
 
     # create temporary file
     # because whisper expects a file path
@@ -13,7 +13,11 @@ def transcribe(file):
         temp_audio.write(file.read())
         temp_audio_path = temp_audio.name
 
-    result = model.transcribe(temp_audio_path)
+    options = {}
+    if language and language != "Auto":
+        options["language"] = language
+
+    result = model.transcribe(temp_audio_path, **options)
 
     os.remove(temp_audio_path)
 
