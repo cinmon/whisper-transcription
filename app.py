@@ -16,4 +16,21 @@ if uploaded_file is not None and st.button("Transcribe"):
         transcription = transcribe(uploaded_file, selected_language)
     st.success("Transcription complete!")
     st.markdown("### 📝 Transcription:")
-    st.text_area("Transcript", transcription, height=300)
+    st.markdown("""
+    <style>
+    .transcript-box {
+        background-color: #f9f9f9;
+        color: #000;
+        padding: 1em;
+        border-radius: 8px;
+        height: 300px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        font-family: monospace;
+    }
+    </style>
+    <div class="transcript-box">
+    %s
+    </div>
+    """ % transcription, unsafe_allow_html=True)
+
