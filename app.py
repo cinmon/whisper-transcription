@@ -32,3 +32,10 @@ if uploaded_file is not None and st.button("Transcribe"):
     </div>
     """ % transcription, unsafe_allow_html=True)
 
+    st.download_button(
+        label="Download as .txt",
+        data=transcription,
+        file_name="transcription.txt",
+        mime="text/plain"
+    )
+
