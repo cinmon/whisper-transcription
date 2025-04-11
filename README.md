@@ -23,3 +23,4 @@ The libraries used are:
 - Format the output for better readability (e.g., punctuation, speaker turns).
 - Add a button to copy the transcription to the clipboard.
 - Add the option to download the transcription as a `.pdf`.
+- Add loading bar and possibly a notification when transcription is complete.
